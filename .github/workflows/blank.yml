@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: name/app
+          images: gotoo123/name
       - name: Build & push
         uses: docker/build-push-action@v4
         with:
@@ -34,9 +34,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           label: ${{ steps.meta.outputs.labels }}
-
-
-
-      - name: echo
-        run: echo Hello, world!
-
