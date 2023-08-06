@@ -1,0 +1,25 @@
+.markdownWrap::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: darkgray;
+}
+
+.markdownWrap :global {
+  height: calc(100vh - 56px);
+  overflow: scroll;
+  overflow-x: unset;
+
+  .markdownContainer {
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.backStep {
+  color: cornflowerblue;
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

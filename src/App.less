@@ -1,0 +1,48 @@
+@import './style/theme/theme.less';
+
+.wrapper :global {
+  user-select: none;
+  height: 100vh;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 10px;
+
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+  }
+
+  .box {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .box.change-lang {
+    bottom: 70px;
+    text-align: center;
+    line-height: 30px;
+
+    span {
+      color: var(--fontColor);
+      font-size: 20px;
+    }
+  }
+}

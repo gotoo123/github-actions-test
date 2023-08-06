@@ -1,0 +1,61 @@
+.headerWrapper :global {
+  z-index: 3;
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    padding: 0 15px;
+    box-shadow: 0 2px 8px 0 rgba(0, 9, 41, 0.12);
+  }
+
+  .header-content.header-theme-light {
+    background: white;
+    .nav-item, .header-logo {
+      color: black;
+    }
+  }
+
+  .header-content.header-theme-dark {
+    background: #222631;
+    .nav-item, .header-logo {
+      color: white;
+    }
+  }
+
+  .header-logo {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .nav-item {
+    margin: 0 20px;
+    &:hover {
+      color: darkgrey;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.homePageHeaderWrapper.headerWrapper :global {
+  position: absolute;
+  width: 100%;
+
+  .header-content {
+    background: transparent;
+    box-shadow: none;
+
+    .nav-item, .header-logo {
+      color: white;
+    }
+  }
+}
