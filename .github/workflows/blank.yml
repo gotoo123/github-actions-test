@@ -23,17 +23,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Docker meta
-          id: meta
-          uses: docker/metadata-action@v4
-          with:
-            images: name/app
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: name/app
       - name: Build & push
-          uses: docker/build-push-action@v4
-          with:
-            context: .
-            push: true
-            tags: ${{ steps.meta.outputs.tags }}
-            label: ${{ steps.meta.outputs.labels }}
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          label: ${{ steps.meta.outputs.labels }}
 
 
 
