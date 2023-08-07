@@ -34,3 +34,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           label: ${{ steps.meta.outputs.labels }}
+  test:
+    runs-on: unbuntu-latest
+    steps:
+      - name: test
+        run: echo hello world!
