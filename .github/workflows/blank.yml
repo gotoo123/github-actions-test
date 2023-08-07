@@ -34,8 +34,17 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           label: ${{ steps.meta.outputs.labels }}
-  test:
-    runs-on: unbuntu-latest
+  pull-docker:
+    needs: [build]
+    name: Pull Docker
+    runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: echo hello world!
+      - nmae: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            docker pull gotoo123/name:main
